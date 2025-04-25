@@ -1,6 +1,6 @@
 ## Scheduled RIA
 
-A novel pruning method that combines Relative Importance Scores(Zhang et al. 2024) with a gradual scheduling algorithm(Zhu & gupta, 2017). 
+A novel pruning method that combines Relative Importance Scores(Zhang et al. 2024) with a gradual scheduling algorithm(Zhu & gupta,2017). 
 
 
 
