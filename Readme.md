@@ -1,16 +1,6 @@
-## Relative Importance and Activations (RIA)
+## Scheduled RIA
 
-**PLUG-AND-PLAY: AN EFFICIENT POST-TRAINING PRUNING METHOD FOR LARGE LANGUAGE MODELS**
-
-Yingtao Zhang<sup>1,2</sup>, Haoli Bai<sup>4</sup>, Haokun Lin<sup>5</sup>, Jialin Zhao<sup>1,2</sup>, Lu Hou<sup>4</sup>, & Carlo Vittorio Cannistraci<sup>1,2,3</sup>
-
-<sup>1</sup> Center for Complex Network Intelligence, Tsinghua Laboratory of Brain and Intelligence  
-<sup>2</sup> Department of Computer Science, Tsinghua University  
-<sup>3</sup> Department of Biomedical Engineering, Tsinghua University  
-<sup>4</sup> Huawei Noah’s Ark Lab  
-<sup>5</sup> Institute of Automation, Chinese Academy of Sciences  
-
-Corresponding to {zhangyingtao1024, kalokagathos.agon}@gmail.com
+A novel pruning method that combines Relative Importance Scores(Zhang et al. 2024) with a gradual scheduling algorithm(Zhu & gupta, 2017). 
 
 
 
@@ -20,7 +10,7 @@ Step 1: Create a new conda environment:
 
 ```
 conda create -n ria python=3.10
-conda activate ria
+conda activate schedria
 ```
 
 
@@ -45,15 +35,10 @@ Follow the installation here: https://github.com/EleutherAI/lm-evaluation-harnes
 RIA with unstructured 50% sparsity
 
 ```
-python main.py \
-	--model YOUR_MODEL_NAME \
-	--prune_method ria \
-	--sparsity_ratio 0.5 \
-	--sparsity_type unstructured \
-	--save \
+python main.py --model YOUR_MODEL_NAME --prune_method ria --sparsity_ratio 0.5 --sparsity_type 1:2 --save --save_model NAME_YOU_WANT_TO_SAVE_AS
 ```
 
-Here the prune_method can be replaced with wanda, sparsegpt, ri, magnitude
+Here the prune_method can be replaced with svd_finetuned", "magnitude", "ri", "wanda", "svd_ri", "svd", "sparsegpt", "ria", "scheduled", "mag_sched
 
 
 
@@ -81,20 +66,6 @@ Enable `--fast` if you want to use a fast version of linear sum assignment.
 #### End-to-End inference speedup with semi-structured sparsity
 
 --------
-
-Currently, this repo only supports the acceleration after direct N:M sparsity. The acceleration of N:M sparsity after channel permutation is still under testing. 
-
-```
-python main.py \
-	--model YOUR_MODEL_NAME \
-	--prune_method ria \
-	--sparsity_ratio 0.5 \
-	--sparsity_type 2:4 \
-	--semi_sparse_acc \
-	--save \
-```
-
-
 
 Requirements:
 
