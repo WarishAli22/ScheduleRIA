@@ -1,0 +1,32 @@
+python main.py \
+	--model K:/RIA/models--google--flan-t5-base/snapshots/7bcac572ce56db69c1ea7c8af255c5d7c9672fc2 \
+	--prune_method ria \
+	--sparsity_ratio 0.5 \
+	--sparsity_type unstructured \
+	--save \
+
+	python main.py --model K:/RIA/models--google--flan-t5-base/snapshots/7bcac572ce56db69c1ea7c8af255c5d7c9672fc2 --prune_method ria --sparsity_ratio 0.5 --sparsity_type 2:4 --save
+	
+	
+python main.py --model K:/llms_and_madness/many_checks/checkpoint-37000 --prune_method ria --sparsity_ratio 0.5 --sparsity_type 2:4 --save
+
+python main.py --model C:\Users\user\.cache\huggingface\hub\models--google--flan-t5-large\snapshots\0613663d0d48ea86ba8cb3d7a44f0f65dc596a2a --prune_method ria --sparsity_ratio 0.5 --sparsity_type 1:2 --save --save_model t5_large_ria_0_5
+
+python main.py --model C:/Users/user/.cache/huggingface/hub/models--facebook--opt-1.3b/snapshots/3f5c25d0bc631cb57ac65913f76e22c2dfb61d62 --prune_method ria --sparsity_ratio 0.5 --sparsity_type 1:2 --save --save_model opt_0_5_ria
+
+
+python main.py --model C:/Users/user/.cache/huggingface/hub/models--EleutherAI--gpt-neo-125m/snapshots/21def0189f5705e2521767faed922f1f15e7d7db --prune_method ria --sparsity_ratio 0.5 --sparsity_type 1:2 --save --save_model gpt_neo_0_5_ria
+
+python main.py --model C:/Users/user/.cache/huggingface/hub/models--google--flan-t5-base/snapshots/7bcac572ce56db69c1ea7c8af255c5d7c9672fc2 --prune_method ria --sparsity_ratio 0.5 --sparsity_type 1:2 --save --save_model t5_base_0_5_ria
+
+python main.py --model C:/Users/user/.cache/huggingface/hub/models--google--flan-t5-small/snapshots/0fc9ddf78a1e988dac52e2dac162b0ede4fd74ab --prune_method scheduled --sparsity_ratio 0.5 --sparsity_type 1:2 --save --save_model t5_small_0_5_sched
+
+python main.py --model C:/Users/user/.cache/huggingface/hub/models--google--flan-t5-base/snapshots/0613663d0d48ea86ba8cb3d7a44f0f65dc596a2a --prune_method scheduled --sparsity_ratio 0.5 --sparsity_type 1:2 --save --save_model t5_large_0_5_sched
+
+python main.py --model C:/Users/user/.cache/huggingface/hub/models--sshleifer--tiny-mbart/snapshots/9d6b9b3b2774b464bb6b14eda4efe30f82846136 --prune_method ria --sparsity_ratio 0.5 --sparsity_type 1:2 --save --save_model mbert_pruned
+
+python main.py --model C:/Users/user/.cache/huggingface/hub/models--EleutherAI--gpt-neo-125m/snapshots/21def0189f5705e2521767faed922f1f15e7d7db --prune_method scheduled --sparsity_ratio 0.5 --sparsity_type 1:2 --save --save_model gpt_neo_0_5_sched
+
+python main.py --model C:/Users/user/.cache/huggingface/hub/models--google--flan-t5-small/snapshots/0fc9ddf78a1e988dac52e2dac162b0ede4fd74ab --prune_method magnitude --sparsity_ratio 0.5 --sparsity_type 1:2 --save --save_model t5_small_0_5_mag
+
+python main.py --model C:/Users/user/.cache/huggingface/hub/models--google--flan-t5-small/snapshots/0fc9ddf78a1e988dac52e2dac162b0ede4fd74ab --prune_method mag_sched --sparsity_ratio 0.5 --sparsity_type 1:2 --save --save_model t5_small_0_5_mag_sched
